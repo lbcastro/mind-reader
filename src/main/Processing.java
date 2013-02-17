@@ -10,59 +10,65 @@ import edu.emory.mathcs.jtransforms.fft.DoubleFFT_1D;
 
 
 public class Processing {
-
+	
+	/*
+	private static List<Integer> 	zeroCross 		= new ArrayList<Integer>(Collections.nCopies(14,0));
+	private static double			fastAverage		= 0.0;
+	private static int				averageCount	= 0;
+	private static double			lastTime		= System.currentTimeMillis();
+	private static List<Double> 	lastChanValue 	= new ArrayList<Double>(Collections.nCopies(14,0.0));
+	*/
 	
 	// Initiate variables.
 	private static List<Double> 	channelValue 	= new ArrayList<Double>(Collections.nCopies(14,0.0));
-	private static List<Double> 	lastChanValue 	= new ArrayList<Double>(Collections.nCopies(14,0.0));
 	private static List<Double> 	channelAverage 	= new ArrayList<Double>(Collections.nCopies(14,0.0));
 	
-	private static List<Double> winkValues = new ArrayList<Double>();
-	private static int winkRec = 0;
-	
-	//private static List<Integer> 	zeroCross 		= new ArrayList<Integer>(Collections.nCopies(14,0));
-	
-	//private static double			fastAverage		= 0.0;
-	//private static int			averageCount	= 0;
-	private static int 			channelCount 	= 0;
-	//private static double			lastTime		= System.currentTimeMillis();
-	private static final int 	IRR_COUNT  		= 214;
+	private static int 				channelCount 	= 0;
+	private static int 				CHANNEL			= 0;
+
+	private static final int 		IRR_COUNT  		= 214;
 	private static double[] 		fftList 		= new double[128];
 	
-	private static boolean		recording		= false;
-	private static boolean		squareActive	= true;
+	private static boolean			recording		= false;
+	private static boolean			squareActive	= true;
+	//
+
 	
-	private static int 			CHANNEL			= 0;
-
-	public static void setChannel(int x) 
-	{ 
-		CHANNEL = x; 
-	}
-
-
-	// Wink detection.
+	
+	///// Left wink detection.
+	///
+	//
+	
+	
+	// wL_value holds the reference values to feed the LDA algorithm
+	// with a trigger event and a baseline.
 	private final double[][] wL_value = {
+			
+			// Trigger event.
 			{ 26.0, 600.0}, { 30.0, 900.0 }, { 66.0, 922.0 }, { 360.0, 1000.0 }, { 360.0, 1900.0 },
 			{ 400.0, 1300.0 }, { 843.0, 216.0 }, { 1012.0, 261.0 },  { 1400.0, 2000.0 }, { 1550.0, 3200.0 }, 
-			 
 
+			// Baseline.
 			{ 3.0, 5.0 }, { 6.0, -13.0 }, { 1.0, 8.0 }, { 20.0, 0.0 }, { 3.5, 5.6 }, 
 			{ 3.5, 11.0 }, { 70.0, 40.0 }, { 70.0, 100.0 }, { 190.0, 340.0 }, { 320.0, 580.0 }
 			
-//			{188.0, 196.0 }, {140.0, 150.0}, {270.0, 300.0}, {170.0, 300.0 }, {130.0, 190.0}, {170.0, 230.0 }, {230.0, 370.0},
-//			{330.0, 340.0}
 	};
-
+	//
+	
+	
+	// wL_class indicates the classes of wL_value values.
 	private final int[] wL_class = { 
 			1,1,1,1,1,1,1,1,1,1,
-			
 			2,2,2,2,2,2,2,2,2,2
-			
-//			3,3,3,3,3,3,3,3
 	};
-
+	//
+	
+	
+	// wL_data analyses the stored data to be able to classify future data.
 	LDA wL_data = new LDA(wL_value, wL_class, true);
 
+	
+	// Initiate needed variables.
 	int wL_result;
 	
 	double wL_ch0;
@@ -72,28 +78,40 @@ public class Processing {
 	double wL_ratio;
 	
 	static int winkLeftOn = 0;
+	//
 	
 	
+	// Event detection function.
+	// This function is fed with a list of values every time a sample is acquired.
+	// Then it checks for specific feature in order to determine if an event occurred.
 	private boolean isWinkLeft(List<Double> values) {
 		
+		
+		// If a recent detection occurred, skip this one.
 		if (winkLeftOn > 0) {
 			return false;
 		}
+		//
 		
+		
+		// Compare specific channels' values.
 		wL_ch0 = values.get(0);
 		wL_ch1 = values.get(1);
 		wL_ch2 = wL_ch0 + wL_ch1;
 		
 		if (wL_ch2 < 0) return false;
-		
 		if (wL_ch0 > wL_ch1) return false;
+		//
 		
+		
+		// Channels' average calculations.
 		wL_average = Math.abs(chanRatioAverage(0,1, values));
 		
 		if (wL_average < 10.0) return false;
-		
 		if (wL_average > wL_ch2) return false;
+		//
 		
+		// LDA calculations.
 		double[] wL_testdata = { wL_average, wL_ch2 };
 		double[] wL_values = wL_data.getDiscriminantFunctionValues(wL_testdata);
 		
@@ -101,22 +119,29 @@ public class Processing {
 		
 		if (wL_ratio < 0) return false;
 
+		
 		wL_result = wL_data.predict(wL_testdata);
 		
 		if (wL_result == 2) return false;
 		if (wL_result == 3) return false;
+		//
 		
-//		System.out.println("-");
-//		System.out.println(ch2);
-//		System.out.println(cAverage);
-//		System.out.println(vratio);
-//		System.out.println(values2[0]);
-//		System.out.println(values2[1]);
-//		
-//		for (int x = 0; x < values.size(); x++) {
-//			System.out.println(values.get(x));
-//		}
 		
+		/* Outputs
+		System.out.println("-");
+		System.out.println(ch2);
+		System.out.println(cAverage);
+		System.out.println(vratio);
+		System.out.println(values2[0]);
+		System.out.println(values2[1]);
+		
+		for (int x = 0; x < values.size(); x++) {
+			System.out.println(values.get(x));
+		}
+		*/
+		
+		
+		// Event detected.
 		winkLeftOn = 60;
 		return true;
 	}
@@ -129,7 +154,23 @@ public class Processing {
 	{
 		return lastTime;
 	}
+		public static List<Double> getLast() {
+		return lastChanValue;
+	}
+	
+	public static double getLast(int x) {
+		return lastChanValue.get(x);
+	}
+	
+	public static void setLast(int x, double value) {
+		lastChanValue.add(x, value);
+	}
 	*/
+	public static void setChannel(int x) 
+	{ 
+		CHANNEL = x; 
+	}
+	
 	public static boolean getRecording()
 	{
 		return recording;
@@ -147,6 +188,7 @@ public class Processing {
 	public static double getAverage(int x) {
 		return channelAverage.get(x);
 	}
+	
 	public static double getCurrent() {
 		return channelValue.get(CHANNEL);
 	}
@@ -170,6 +212,7 @@ public class Processing {
 	public static double getValue(int x) {
 		return channelValue.get(x);
 	}
+	
 	public static int getChannel() 
 	{ 
 		return CHANNEL; 
@@ -177,18 +220,6 @@ public class Processing {
 	
 	public static List<Double> getAverage() {
 		return channelAverage;
-	}
-	
-	public static List<Double> getLast() {
-		return lastChanValue;
-	}
-	
-	public static double getLast(int x) {
-		return lastChanValue.get(x);
-	}
-	
-	public static void setLast(int x, double value) {
-		lastChanValue.add(x, value);
 	}
 	
 	public static void setValue(int x, double value) {
@@ -211,7 +242,10 @@ public class Processing {
 		
 		return ratio;
 	}
+	//
 	
+	
+	// Calculates a specific channel divided by the rests' average.
 	public double chanRatioAverage(int channel1, int channel2, List<Double> values) {
 		double ratio;
 		double total = 0;
@@ -225,120 +259,8 @@ public class Processing {
 		
 		return ratio;
 	}
-	
-	
-	// Left wink detection.
-	static int phase1 = 0;
-	static int phase2 = 0;
-	static int phase3 = 0;
-	static int phase33 = 0;
-	static int phase4 = 0;
-	
-	static 	int blankCount = 0;
-	
-	static double minWinkValue = -50.0;
-	static double winkThreshold = 30.0;
-	static double maxWinkValue = 100.0;
-	
-	private static void leftWink(double value, int channel) {
-		
-		int x = channel;
-		
-		
-		// Channel 0.
-		if (x == 0) {
-			if (phase2 == 0) {
-				if (value >= winkThreshold) {
-					phase1 = 1;
-					winkRec = 1;
-				}
-			}
-		}
-		//
-		
-		
-		// Channel 1.
-		else if (x == 1) {
-			if (phase3 == 0) {
-				if (value >= maxWinkValue) {
-					phase2 = 1;
-				}
-			}
-			if (phase3 == 1) {
-				if (value < minWinkValue) {
-					phase4 = 1;
-				}
-			}
-		}
-		//
-		
-		
-		// Channel 12.
-		else if (x == 12) {
-			if (value > 80.0) {
-				leftWink(false);
-			}
-		}
-		//
-		
-		
-		// Other channels.
-		else if (phase2 == 1 && phase3 == 0) {
-			if (value < 25.0 && value > -25.0) {
-				blankCount +=1;
-			}
-		}
-	}
 	//
 	
-	
-	//
-	private static void leftWink(int a) {
-		
-		
-		// Perform actions before a set of data is recorded.
-		if (a == 0) {
-			blankCount = 0;
-
-			if (phase33 > 0) phase33 +=1;
-
-			if (phase33 >= 50) leftWink(false);
-		}
-		//
-		
-		
-		// Perform actions after the dataset is recorded.
-		if (a == 1) {
-			if (phase2 == 1 && phase3 == 0) {
-				if (blankCount == 11 || blankCount == 12) {
-					phase3 = 1;
-					phase33 = 1;
-				}
-				else leftWink(false);
-			}
-			if (phase4 == 1) {
-				System.out.println(winkValues);
-				System.out.println("WINK");
-
-				leftWink(false);
-			}
-		}
-	}
-	
-	private static void leftWink(boolean a) {
-		if (!a) {
-			phase33 = 0;
-			phase1 = 0;
-			phase2 = 0;
-			phase3 = 0;
-			phase4 = 0;
-			winkRec = 0;
-			
-			winkValues.clear();
-		}
-	}
-	//
-
 	
 	// Slope.
 	private static double calcSlope(double[] values) {
@@ -484,6 +406,8 @@ public class Processing {
 	}
 	//
 	
+	
+	// Hann window function.
 	private static double[] setHann(double[] rawEeg) {
 		
 		double[] window = new double[rawEeg.length];
@@ -495,6 +419,8 @@ public class Processing {
 		
 		return window;
 	}
+	//
+	
 	
 	/*
 	// Set Hann window function.
@@ -588,7 +514,7 @@ public class Processing {
 		
 		
 		// Initiate variables.
-		double[] magList = new double[128];
+		double[]  magList = new double[128];
 		double 	  magReal = 0.0;
 		double 	  magImag = 0.0;
 		//
@@ -644,25 +570,22 @@ public class Processing {
 	//
 
 	
-	// Removes background from raw EEG data.
+	// Main function.
 	public Processing(List<Double> values) {
 		
 		
 		// Initiate needed values.
 		Complex[] fftForward = new Complex[128];
-		double[] hannWindow = new double[128];
-		double[] magValues	 = new double[128];
+		double[]  hannWindow = new double[128];
+		double[]  magValues	 = new double[128];
 		
 		double value;
-
 		//
 		
-		//leftWink(0);
 		
 		// Calculates and removes the background from a range of 214 samples,
 		// for a 0.6Hz high pass filter (1/0.6*128).
 		for (int x = 0; x < 14; x++) {
-		//for (int x = 3; x < 17; x++) {
 			
 			
 			// Local variables.
@@ -672,13 +595,13 @@ public class Processing {
 			
 			// Save current value and average.
 			setAverage(x, ((getAverage(x) * (IRR_COUNT-1)) + value) / IRR_COUNT);
-			channelValue.set(x, roundTwo(value - getAverage(x)));
-
-			//leftWink(getValue(x), x);
-
+			setValue(x, roundTwo(value - getAverage(x)));
+			//
 			
-			if (x == 1 && winkRec == 1) winkValues.add(getValue(x));
+			
+			// Records the data to a file.
 			if (getRecording()) Saving.addRaw(getValue(x), x);
+			//
 				
 			/*
 			// Register zero crossing.
@@ -689,45 +612,19 @@ public class Processing {
 			//
 			*/
 			
-			// Save last recorded value.
-			//setLast(x, getValue(x));
 			//
 		}
 		//				
 		EegChart.addEeg(getCurrent());
 		
+		
+		// Left wink detection.
 		if (winkLeftOn > 0) winkLeftOn -= 1;
 		if (isWinkLeft(getValue())) {
 			System.out.println("WINK LEFT");
 		}
-		
 		//
 		
-		//leftWink(1);
-		
-		//
-		
-		
-		
-/*		// Machine learning.
-		double[] testData 	= { Chan.getValue(3), Chan.getValue(4) };
-		
-		// UTILIZAR DADOS DE TODOS OS CANAIS
-		
-		result = Classify.predict(testData, 1);
-		
-		double[] testData2 = { Chan.getValue(14), Chan.getValue(15) };
-		
-		result2 = Classify.predict(testData2, 2);
-		
-		
-		if (result == 1 && result2 == 1) { 
-			Values.setRangeValue("Blink");
-			System.out.println("blink");
-		}
-		else if (result == 0 && Chan.getCount() == 128) { Values.setRangeValue("Baseline"); }
-		//
-*/		
 		
 		// Adds each sample to a list until 128 samples are recorded.
 		fftList[channelCount] = getCurrent();
@@ -735,14 +632,6 @@ public class Processing {
 		//
 		
 		
-		// Displays the raw EEG data.
-		
-
-		
-		//calcFast(currentChan);
-		//
-
-
 		// Display each channel's activity.
 		if (squareActive) {
 			Square square = Interface.square;
@@ -751,19 +640,6 @@ public class Processing {
 		}
 		//
 
-		/*
-		// Calculates max and min values.
-		if (currentChan > Values.getMaxValue()) 
-		{ 
-			Values.setMaxValue(currentChan);
-		}
-
-		if (currentChan < Values.getMinValue()) 
-		{
-			Values.setMinValue(currentChan);
-		}
-		//
-	*/
 
 		// After collecting 128 samples.
 		if (getCount() >= 128) {
