@@ -1,0 +1,673 @@
+Thread 0x80dce0d0
+  at sun.rmi.transport.tcp.TCPTransport.handleMessages(Lsun/rmi/transport/Connection;Z)V (TCPTransport.java:530)
+  at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0()V (TCPTransport.java:808)
+  at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run()V (TCPTransport.java:667)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (ThreadPoolExecutor.java:1110)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run()V (ThreadPoolExecutor.java:603)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x8048daa0, line=0
+    objectId=0x80dd31c0, line=0
+    objectId=0x80dce080, line=1
+    objectId=0x80436688, line=1
+    objectId=0x80dcee88, line=1
+    objectId=0x80dceeb8, line=1
+    objectId=0x80dd0ee8, line=1
+    objectId=0x80dd1030, line=1
+    objectId=0x80dd1070, line=1
+    objectId=0x80dd3098, line=1
+    objectId=0x80dd3120, line=1
+    objectId=0x80dd3140, line=1
+    objectId=0x80dd31c0, line=1
+    objectId=0x80dd30e8, line=1
+    objectId=0x80dce080, line=2
+    objectId=0x80dce0d0, line=2
+    objectId=0x80dced58, line=2
+    objectId=0x8047ade0, line=3
+    objectId=0x80dce0a0, line=3
+    objectId=0x80dce080, line=3
+    objectId=0x80dce0a0, line=4
+    objectId=0x80dce0d0, line=5
+
+Thread 0x809e8508
+  at sun.misc.Unsafe.park(ZJ)V (Native Method)
+  at java.util.concurrent.locks.LockSupport.park(Ljava/lang/Object;)V (LockSupport.java:186)
+  at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await()V (AbstractQueuedSynchronizer.java:2043)
+  at java.util.concurrent.DelayQueue.take()Ljava/util/concurrent/Delayed; (DelayQueue.java:189)
+  at javax.swing.TimerQueue.run()V (TimerQueue.java:167)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x809e8578, line=1
+    objectId=0x809e8508, line=1
+    objectId=0x809e8578, line=2
+    objectId=0x80ad0c90, line=2
+    objectId=0x809e8590, line=3
+    objectId=0x809e85a8, line=3
+    objectId=0x809e85b8, line=4
+    objectId=0x809e8508, line=5
+
+Thread 0x80899cf8
+  at sun.management.HotSpotDiagnostic.dumpHeap(Ljava/lang/String;Z)V (Native Method)
+  at sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (Native Method)
+  at sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (NativeMethodAccessorImpl.java:57)
+  at sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (DelegatingMethodAccessorImpl.java:43)
+  at java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (Method.java:616)
+  at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Lcom/sun/jmx/mbeanserver/MXBeanLookup;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (ConvertingMethod.java:180)
+  at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Lcom/sun/jmx/mbeanserver/ConvertingMethod;Ljava/lang/Object;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; (MXBeanIntrospector.java:114)
+  at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; (MXBeanIntrospector.java:51)
+  at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; (MBeanIntrospector.java:226)
+  at com.sun.jmx.mbeanserver.PerInterface.invoke(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object; (PerInterface.java:138)
+  at com.sun.jmx.mbeanserver.MBeanSupport.invoke(Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object; (MBeanSupport.java:251)
+  at javax.management.StandardMBean.invoke(Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object; (StandardMBean.java:405)
+  at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(Ljavax/management/ObjectName;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object; (DefaultMBeanServerInterceptor.java:857)
+  at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(Ljavax/management/ObjectName;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object; (JmxMBeanServer.java:795)
+  at javax.management.remote.rmi.RMIConnectionImpl.doOperation(I[Ljava/lang/Object;)Ljava/lang/Object; (RMIConnectionImpl.java:1475)
+  at javax.management.remote.rmi.RMIConnectionImpl.access$300(Ljavax/management/remote/rmi/RMIConnectionImpl;I[Ljava/lang/Object;)Ljava/lang/Object; (RMIConnectionImpl.java:97)
+  at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run()Ljava/lang/Object; (RMIConnectionImpl.java:1316)
+  at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(I[Ljava/lang/Object;Ljavax/security/auth/Subject;)Ljava/lang/Object; (RMIConnectionImpl.java:1408)
+  at javax.management.remote.rmi.RMIConnectionImpl.invoke(Ljavax/management/ObjectName;Ljava/lang/String;Ljava/rmi/MarshalledObject;[Ljava/lang/String;Ljavax/security/auth/Subject;)Ljava/lang/Object; (RMIConnectionImpl.java:838)
+  at sun.reflect.GeneratedMethodAccessor20.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (Unknown Source)
+  at sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (DelegatingMethodAccessorImpl.java:43)
+  at java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (Method.java:616)
+  at sun.rmi.server.UnicastServerRef.dispatch(Ljava/rmi/Remote;Ljava/rmi/server/RemoteCall;)V (UnicastServerRef.java:322)
+  at sun.rmi.transport.Transport$1.run()Ljava/lang/Object; (Transport.java:177)
+  at java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (Native Method)
+  at sun.rmi.transport.Transport.serviceCall(Ljava/rmi/server/RemoteCall;)Z (Transport.java:173)
+  at sun.rmi.transport.tcp.TCPTransport.handleMessages(Lsun/rmi/transport/Connection;Z)V (TCPTransport.java:553)
+  at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0()V (TCPTransport.java:808)
+  at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run()V (TCPTransport.java:667)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (ThreadPoolExecutor.java:1110)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run()V (ThreadPoolExecutor.java:603)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x80dcd050, line=2
+    objectId=0x8047c630, line=2
+    objectId=0x80dccfa8, line=2
+    objectId=0x8046ee58, line=5
+    objectId=0x80439cb0, line=5
+    objectId=0x8047c630, line=5
+    objectId=0x80dccfa8, line=5
+    objectId=0x80dccfa8, line=5
+    objectId=0x8047be70, line=6
+    objectId=0x8046ee58, line=6
+    objectId=0x8047c630, line=6
+    objectId=0x80dccfa8, line=6
+    objectId=0x80439cb0, line=6
+    objectId=0x8047be70, line=7
+    objectId=0x8046ee58, line=7
+    objectId=0x8047c630, line=7
+    objectId=0x80dccfa8, line=7
+    objectId=0x80439cb0, line=7
+    objectId=0x8047be70, line=8
+    objectId=0x8046ee58, line=8
+    objectId=0x8047c630, line=8
+    objectId=0x80dccfa8, line=8
+    objectId=0x80439cb0, line=8
+    objectId=0x804233e8, line=9
+    objectId=0x8047c630, line=9
+    objectId=0x80dcb9c8, line=9
+    objectId=0x80dccfa8, line=9
+    objectId=0x80dccd40, line=9
+    objectId=0x80439cb0, line=9
+    objectId=0x80461798, line=9
+    objectId=0x8046a5b8, line=9
+    objectId=0x80dcd040, line=9
+    objectId=0x80472210, line=10
+    objectId=0x80dcb9c8, line=10
+    objectId=0x80dccfa8, line=10
+    objectId=0x80dccd40, line=10
+    objectId=0x8046f348, line=11
+    objectId=0x80dcb9c8, line=11
+    objectId=0x80dccfa8, line=11
+    objectId=0x80dccd40, line=11
+    objectId=0x80494570, line=12
+    objectId=0x80dcb970, line=12
+    objectId=0x80dcb9c8, line=12
+    objectId=0x80dccfa8, line=12
+    objectId=0x80dccd40, line=12
+    objectId=0x8046f348, line=12
+    objectId=0x8047c668, line=13
+    objectId=0x80dcb970, line=13
+    objectId=0x80dcb9c8, line=13
+    objectId=0x80dccfa8, line=13
+    objectId=0x80dccd40, line=13
+    objectId=0x80878950, line=14
+    objectId=0x80dcd008, line=14
+    objectId=0x80878950, line=15
+    objectId=0x80dcd008, line=15
+    objectId=0x80dcd028, line=16
+    objectId=0x80878950, line=17
+    objectId=0x80dcd008, line=17
+    objectId=0x80dcd028, line=17
+    objectId=0x80878950, line=18
+    objectId=0x80dcb970, line=18
+    objectId=0x80dcb9c8, line=18
+    objectId=0x80dccae8, line=18
+    objectId=0x80dccd40, line=18
+    objectId=0x80dccfa8, line=18
+    objectId=0x80dcd008, line=18
+    objectId=0x808a6180, line=19
+    objectId=0x80878950, line=19
+    objectId=0x80dcb950, line=19
+    objectId=0x80879120, line=22
+    objectId=0x80dcb8e0, line=22
+    objectId=0x8087a148, line=22
+    objectId=0x80dcb930, line=23
+    objectId=0x8048daa0, line=25
+    objectId=0x80dcb8e0, line=25
+    objectId=0x80878950, line=25
+    objectId=0x80dcb918, line=25
+    objectId=0x8048daa0, line=25
+    objectId=0x80878838, line=25
+    objectId=0x80879120, line=25
+    objectId=0x80879188, line=25
+    objectId=0x80477ce8, line=25
+    objectId=0x80899cf8, line=25
+    objectId=0x80477ce8, line=25
+    objectId=0x8048daa0, line=26
+    objectId=0x8089bde0, line=26
+    objectId=0x8089bdc0, line=26
+    objectId=0x80dcb8e0, line=26
+    objectId=0x8089be10, line=27
+    objectId=0x80436688, line=27
+    objectId=0x80899d68, line=27
+    objectId=0x8089bda0, line=27
+    objectId=0x8089be30, line=27
+    objectId=0x8089be50, line=27
+    objectId=0x8089be78, line=27
+    objectId=0x8089be90, line=27
+    objectId=0x8089bea8, line=27
+    objectId=0x8089bec8, line=27
+    objectId=0x8089bde0, line=27
+    objectId=0x8089bef8, line=27
+    objectId=0x8089be10, line=28
+    objectId=0x80899cf8, line=28
+    objectId=0x8089bf10, line=28
+    objectId=0x8047ade0, line=29
+    objectId=0x8089bf28, line=29
+    objectId=0x8089be10, line=29
+    objectId=0x8089bf28, line=30
+    objectId=0x80899cf8, line=31
+
+Thread 0x808822c8
+  at java.lang.Object.wait(J)V (Native Method)
+  at com.sun.jmx.remote.internal.ArrayNotificationBuffer.fetchNotifications(Lcom/sun/jmx/remote/internal/NotificationBufferFilter;JJI)Ljavax/management/remote/NotificationResult; (ArrayNotificationBuffer.java:435)
+  at com.sun.jmx.remote.internal.ArrayNotificationBuffer$ShareBuffer.fetchNotifications(Lcom/sun/jmx/remote/internal/NotificationBufferFilter;JJI)Ljavax/management/remote/NotificationResult; (ArrayNotificationBuffer.java:227)
+  at com.sun.jmx.remote.internal.ServerNotifForwarder.fetchNotifs(JJI)Ljavax/management/remote/NotificationResult; (ServerNotifForwarder.java:275)
+  at javax.management.remote.rmi.RMIConnectionImpl$3.run()Ljavax/management/remote/NotificationResult; (RMIConnectionImpl.java:1277)
+  at javax.management.remote.rmi.RMIConnectionImpl$3.run()Ljava/lang/Object; (RMIConnectionImpl.java:1275)
+  at javax.management.remote.rmi.RMIConnectionImpl.fetchNotifications(JIJ)Ljavax/management/remote/NotificationResult; (RMIConnectionImpl.java:1281)
+  at sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (Native Method)
+  at sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (NativeMethodAccessorImpl.java:57)
+  at sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (DelegatingMethodAccessorImpl.java:43)
+  at java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (Method.java:616)
+  at sun.rmi.server.UnicastServerRef.dispatch(Ljava/rmi/Remote;Ljava/rmi/server/RemoteCall;)V (UnicastServerRef.java:322)
+  at sun.rmi.transport.Transport$1.run()Ljava/lang/Object; (Transport.java:177)
+  at java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (Native Method)
+  at sun.rmi.transport.Transport.serviceCall(Ljava/rmi/server/RemoteCall;)Z (Transport.java:173)
+  at sun.rmi.transport.tcp.TCPTransport.handleMessages(Lsun/rmi/transport/Connection;Z)V (TCPTransport.java:553)
+  at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0()V (TCPTransport.java:808)
+  at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run()V (TCPTransport.java:667)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (ThreadPoolExecutor.java:1110)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run()V (ThreadPoolExecutor.java:603)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x80882338, line=1
+    objectId=0x80882370, line=1
+    objectId=0x80bea720, line=1
+    objectId=0x80882338, line=1
+    objectId=0x80882380, line=2
+    objectId=0x80882370, line=2
+    objectId=0x80882338, line=2
+    objectId=0x80882390, line=3
+    objectId=0x80bea738, line=4
+    objectId=0x80bea738, line=5
+    objectId=0x80878950, line=6
+    objectId=0x80bea738, line=6
+    objectId=0x808823c0, line=8
+    objectId=0x80878950, line=8
+    objectId=0x80bea708, line=8
+    objectId=0x80879120, line=11
+    objectId=0x80bea758, line=11
+    objectId=0x80877b38, line=11
+    objectId=0x80bea6e8, line=12
+    objectId=0x8048daa0, line=14
+    objectId=0x80bea758, line=14
+    objectId=0x80878950, line=14
+    objectId=0x80bea778, line=14
+    objectId=0x8048daa0, line=14
+    objectId=0x80878838, line=14
+    objectId=0x80879120, line=14
+    objectId=0x80879188, line=14
+    objectId=0x80477ce8, line=14
+    objectId=0x808822c8, line=14
+    objectId=0x80477ce8, line=14
+    objectId=0x8048daa0, line=15
+    objectId=0x808823e8, line=15
+    objectId=0x80882418, line=15
+    objectId=0x80bea758, line=15
+    objectId=0x80882438, line=16
+    objectId=0x80436688, line=16
+    objectId=0x80882458, line=16
+    objectId=0x80882480, line=16
+    objectId=0x808824a0, line=16
+    objectId=0x808824c0, line=16
+    objectId=0x808824e8, line=16
+    objectId=0x80882500, line=16
+    objectId=0x80882518, line=16
+    objectId=0x80882538, line=16
+    objectId=0x808823e8, line=16
+    objectId=0x80882568, line=16
+    objectId=0x80882438, line=17
+    objectId=0x808822c8, line=17
+    objectId=0x80882580, line=17
+    objectId=0x8047ade0, line=18
+    objectId=0x80882598, line=18
+    objectId=0x80882438, line=18
+    objectId=0x80882598, line=19
+    objectId=0x808822c8, line=20
+
+Thread 0x808825c8
+  at java.net.SocketInputStream.socketRead0(Ljava/io/FileDescriptor;[BIII)I (Native Method)
+  at java.net.SocketInputStream.read([BII)I (SocketInputStream.java:146)
+  at java.io.BufferedInputStream.fill()V (BufferedInputStream.java:235)
+  at java.io.BufferedInputStream.read()I (BufferedInputStream.java:254)
+  at java.io.FilterInputStream.read()I (FilterInputStream.java:83)
+  at sun.rmi.transport.tcp.TCPTransport.handleMessages(Lsun/rmi/transport/Connection;Z)V (TCPTransport.java:535)
+  at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0()V (TCPTransport.java:808)
+  at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run()V (TCPTransport.java:667)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (ThreadPoolExecutor.java:1110)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run()V (ThreadPoolExecutor.java:603)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x80882638, line=1
+    objectId=0x80882670, line=1
+    objectId=0x80882660, line=1
+    objectId=0x80884680, line=2
+    objectId=0x80882670, line=2
+    objectId=0x80884680, line=3
+    objectId=0x808846a0, line=4
+    objectId=0x8048daa0, line=5
+    objectId=0x808846c0, line=5
+    objectId=0x808846a0, line=5
+    objectId=0x808846f0, line=6
+    objectId=0x80436688, line=6
+    objectId=0x80882638, line=6
+    objectId=0x80884680, line=6
+    objectId=0x80884710, line=6
+    objectId=0x80884730, line=6
+    objectId=0x80884758, line=6
+    objectId=0x80884770, line=6
+    objectId=0x80884788, line=6
+    objectId=0x808847a8, line=6
+    objectId=0x808846c0, line=6
+    objectId=0x808847d8, line=6
+    objectId=0x808846f0, line=7
+    objectId=0x808825c8, line=7
+    objectId=0x808847f0, line=7
+    objectId=0x8047ade0, line=8
+    objectId=0x80884808, line=8
+    objectId=0x808846f0, line=8
+    objectId=0x80884808, line=9
+    objectId=0x808825c8, line=10
+
+Thread 0x80873e68
+  at java.lang.Object.wait(J)V (Native Method)
+  at com.sun.jmx.remote.internal.ServerCommunicatorAdmin$Timeout.run()V (ServerCommunicatorAdmin.java:168)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x80873ee8, line=1
+    objectId=0x80873ed8, line=1
+    objectId=0x80873e68, line=2
+
+Thread 0x80873ef8
+  at sun.misc.Unsafe.park(ZJ)V (Native Method)
+  at java.util.concurrent.locks.LockSupport.parkNanos(Ljava/lang/Object;J)V (LockSupport.java:226)
+  at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(J)J (AbstractQueuedSynchronizer.java:2081)
+  at java.util.concurrent.DelayQueue.take()Ljava/util/concurrent/Delayed; (DelayQueue.java:193)
+  at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take()Ljava/lang/Runnable; (ScheduledThreadPoolExecutor.java:688)
+  at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take()Ljava/lang/Object; (ScheduledThreadPoolExecutor.java:681)
+  at java.util.concurrent.ThreadPoolExecutor.getTask()Ljava/lang/Runnable; (ThreadPoolExecutor.java:1043)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (ThreadPoolExecutor.java:1103)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run()V (ThreadPoolExecutor.java:603)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x80407e58, line=1
+    objectId=0x80873ef8, line=1
+    objectId=0x80407e58, line=2
+    objectId=0x80873f68, line=2
+    objectId=0x804aea70, line=3
+    objectId=0x80407e48, line=3
+    objectId=0x80873f88, line=3
+    objectId=0x804925f8, line=4
+    objectId=0x804925f8, line=5
+    objectId=0x8047a9f0, line=6
+    objectId=0x8047a9f0, line=7
+    objectId=0x80873fb8, line=7
+    objectId=0x80873fb8, line=8
+    objectId=0x80873ef8, line=9
+
+Thread 0x804cd020
+  at sun.font.SunLayoutEngine.nativeLayout(Lsun/font/Font2D;Lsun/font/FontStrike;[FII[CIIIIIIILjava/awt/geom/Point2D$Float;Lsun/font/GlyphLayout$GVData;JJ)V (Native Method)
+  at sun.font.SunLayoutEngine.layout(Lsun/font/FontStrikeDesc;[FIILsun/font/TextRecord;ILjava/awt/geom/Point2D$Float;Lsun/font/GlyphLayout$GVData;)V (SunLayoutEngine.java:160)
+  at sun.font.GlyphLayout$EngineRecord.layout()V (GlyphLayout.java:661)
+  at sun.font.GlyphLayout.layout(Ljava/awt/Font;Ljava/awt/font/FontRenderContext;[CIIILsun/font/StandardGlyphVector;)Lsun/font/StandardGlyphVector; (GlyphLayout.java:460)
+  at sun.font.ExtendedTextSourceLabel.createGV()Lsun/font/StandardGlyphVector; (ExtendedTextSourceLabel.java:324)
+  at sun.font.ExtendedTextSourceLabel.getGV()Lsun/font/StandardGlyphVector; (ExtendedTextSourceLabel.java:310)
+  at sun.font.ExtendedTextSourceLabel.createLogicalBounds()Ljava/awt/geom/Rectangle2D; (ExtendedTextSourceLabel.java:224)
+  at sun.font.ExtendedTextSourceLabel.getAdvance()F (ExtendedTextSourceLabel.java:133)
+  at java.awt.font.TextLine.init()V (TextLine.java:282)
+  at java.awt.font.TextLine.<init>(Ljava/awt/font/FontRenderContext;[Lsun/font/TextLineComponent;[F[CII[I[BZ)V (TextLine.java:128)
+  at java.awt.font.TextLine.fastCreateTextLine(Ljava/awt/font/FontRenderContext;[CLjava/awt/Font;Lsun/font/CoreMetrics;Ljava/util/Map;)Ljava/awt/font/TextLine; (TextLine.java:970)
+  at java.awt.font.TextLayout.fastInit([CLjava/awt/Font;Ljava/util/Map;Ljava/awt/font/FontRenderContext;)V (TextLayout.java:603)
+  at java.awt.font.TextLayout.<init>(Ljava/text/AttributedCharacterIterator;Ljava/awt/font/FontRenderContext;)V (TextLayout.java:529)
+  at sun.java2d.SunGraphics2D.drawString(Ljava/text/AttributedCharacterIterator;FF)V (SunGraphics2D.java:2880)
+  at org.jfree.text.TextUtilities.drawRotatedString(Ljava/lang/String;Ljava/awt/Graphics2D;FFDFF)V (TextUtilities.java:549)
+  at org.jfree.text.TextUtilities.drawRotatedString(Ljava/lang/String;Ljava/awt/Graphics2D;FFLorg/jfree/ui/TextAnchor;DLorg/jfree/ui/TextAnchor;)V (TextUtilities.java:605)
+  at org.jfree.chart.axis.Axis.drawLabel(Ljava/lang/String;Ljava/awt/Graphics2D;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/Rectangle2D;Lorg/jfree/ui/RectangleEdge;Lorg/jfree/chart/axis/AxisState;)Lorg/jfree/chart/axis/AxisState; (Axis.java:1253)
+  at org.jfree.chart.axis.NumberAxis.draw(Ljava/awt/Graphics2D;DLjava/awt/geom/Rectangle2D;Ljava/awt/geom/Rectangle2D;Lorg/jfree/ui/RectangleEdge;Lorg/jfree/chart/plot/PlotRenderingInfo;)Lorg/jfree/chart/axis/AxisState; (NumberAxis.java:678)
+  at org.jfree.chart.plot.XYPlot.drawAxes(Ljava/awt/Graphics2D;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/Rectangle2D;Lorg/jfree/chart/plot/PlotRenderingInfo;)Ljava/util/Map; (XYPlot.java:3734)
+  at org.jfree.chart.plot.XYPlot.draw(Ljava/awt/Graphics2D;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/Point2D;Lorg/jfree/chart/plot/PlotState;Lorg/jfree/chart/plot/PlotRenderingInfo;)V (XYPlot.java:3235)
+  at org.jfree.chart.JFreeChart.draw(Ljava/awt/Graphics2D;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/Point2D;Lorg/jfree/chart/ChartRenderingInfo;)V (JFreeChart.java:1237)
+  at org.jfree.chart.ChartPanel.paintComponent(Ljava/awt/Graphics;)V (ChartPanel.java:1677)
+  at javax.swing.JComponent.paint(Ljava/awt/Graphics;)V (JComponent.java:1030)
+  at javax.swing.JComponent.paintToOffscreen(Ljava/awt/Graphics;IIIIII)V (JComponent.java:5139)
+  at javax.swing.RepaintManager$PaintManager.paintDoubleBuffered(Ljavax/swing/JComponent;Ljava/awt/Image;Ljava/awt/Graphics;IIII)V (RepaintManager.java:1454)
+  at javax.swing.RepaintManager$PaintManager.paint(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljava/awt/Graphics;IIII)Z (RepaintManager.java:1385)
+  at javax.swing.BufferStrategyPaintManager.paint(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljava/awt/Graphics;IIII)Z (BufferStrategyPaintManager.java:318)
+  at javax.swing.RepaintManager.paint(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljava/awt/Graphics;IIII)V (RepaintManager.java:1188)
+  at javax.swing.JComponent._paintImmediately(IIII)V (JComponent.java:5087)
+  at javax.swing.JComponent.paintImmediately(IIII)V (JComponent.java:4897)
+  at javax.swing.RepaintManager.paintDirtyRegions(Ljava/util/Map;)V (RepaintManager.java:783)
+  at javax.swing.RepaintManager.paintDirtyRegions()V (RepaintManager.java:735)
+  at javax.swing.RepaintManager.prePaintDirtyRegions()V (RepaintManager.java:677)
+  at javax.swing.RepaintManager.access$700(Ljavax/swing/RepaintManager;)V (RepaintManager.java:58)
+  at javax.swing.RepaintManager$ProcessingRunnable.run()V (RepaintManager.java:1593)
+  at java.awt.event.InvocationEvent.dispatch()V (InvocationEvent.java:226)
+  at java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V (EventQueue.java:670)
+  at java.awt.EventQueue.access$400(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V (EventQueue.java:96)
+  at java.awt.EventQueue$2.run()Ljava/lang/Void; (EventQueue.java:631)
+  at java.awt.EventQueue$2.run()Ljava/lang/Object; (EventQueue.java:629)
+  at java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (Native Method)
+  at java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object; (AccessControlContext.java:105)
+  at java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V (EventQueue.java:640)
+  at java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z (EventDispatchThread.java:275)
+  at java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V (EventDispatchThread.java:200)
+  at java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V (EventDispatchThread.java:190)
+  at java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V (EventDispatchThread.java:185)
+  at java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V (EventDispatchThread.java:177)
+  at java.awt.EventDispatchThread.run()V (EventDispatchThread.java:138)
+
+  locals:
+    objectId=0x80dcecd8, line=0
+    objectId=0x80dcece8, line=0
+    objectId=0x80dcecf8, line=0
+    objectId=0x80dced08, line=0
+    objectId=0x80dced18, line=0
+    objectId=0x80dced28, line=0
+    objectId=0x80dced38, line=0
+    objectId=0x80dced48, line=0
+    objectId=0x80551b28, line=3
+    objectId=0x80dcead0, line=3
+    objectId=0x80dce590, line=3
+    objectId=0x805677c8, line=3
+    objectId=0x80dcec28, line=4
+    objectId=0x80551b28, line=4
+    objectId=0x80dcec28, line=5
+    objectId=0x80dcec28, line=7
+    objectId=0x80dcec70, line=8
+    objectId=0x80dcec28, line=8
+    objectId=0x80dceb88, line=8
+    objectId=0x80dce2e0, line=13
+    objectId=0x80dce2e0, line=14
+    objectId=0x80dcea40, line=14
+    objectId=0x804d2ea0, line=16
+    objectId=0x8fbdef88, line=16
+    objectId=0x80dce2e0, line=16
+    objectId=0x80dce4f0, line=16
+    objectId=0x80dce5a8, line=16
+    objectId=0x804ce098, line=16
+    objectId=0x80dce7d8, line=16
+    objectId=0x8051a858, line=16
+    objectId=0x804cecd0, line=16
+    objectId=0x807c15a8, line=16
+    objectId=0x80dcea18, line=16
+    objectId=0x80dce848, line=16
+    objectId=0x80dce888, line=16
+    objectId=0x804d2ea0, line=17
+    objectId=0x80dce2e0, line=17
+    objectId=0x80dce4f0, line=17
+    objectId=0x80dce5a8, line=17
+    objectId=0x804ce098, line=17
+    objectId=0x80dce420, line=17
+    objectId=0x80dce7d8, line=17
+    objectId=0x804cf118, line=18
+    objectId=0x80dce2e0, line=18
+    objectId=0x80dce4f0, line=18
+    objectId=0x80dce5a8, line=18
+    objectId=0x80dce420, line=18
+    objectId=0x80dce5f0, line=18
+    objectId=0x80dce748, line=18
+    objectId=0x80dce7c0, line=18
+    objectId=0x804d2ea0, line=18
+    objectId=0x804cf118, line=19
+    objectId=0x80dce2e0, line=19
+    objectId=0x80dce420, line=19
+    objectId=0x80dce5a8, line=19
+    objectId=0x8051fcc8, line=20
+    objectId=0x80dce2e0, line=20
+    objectId=0x80dce2b8, line=20
+    objectId=0x8051fe90, line=20
+    objectId=0x8052af70, line=20
+    objectId=0x80dce4f0, line=20
+    objectId=0x80dce578, line=20
+    objectId=0x80dce4f0, line=20
+    objectId=0x80dce420, line=20
+    objectId=0x804d2c70, line=21
+    objectId=0x80dcdbf0, line=21
+    objectId=0x80dcdd10, line=21
+    objectId=0x80dcde18, line=21
+    objectId=0x80dcde28, line=21
+    objectId=0x80dce268, line=21
+    objectId=0x80dce290, line=21
+    objectId=0x80dce2b8, line=21
+    objectId=0x80dce2e0, line=21
+    objectId=0x804806d8, line=21
+    objectId=0x80dce408, line=21
+    objectId=0x804d2c70, line=22
+    objectId=0x80dcdab0, line=22
+    objectId=0x80dcdab0, line=22
+    objectId=0x80dcdbf0, line=22
+    objectId=0x8048ea58, line=22
+    objectId=0x80dcdcf8, line=22
+    objectId=0x804d2c70, line=23
+    objectId=0x80dcdab0, line=23
+    objectId=0x804d2c70, line=24
+    objectId=0x809e85d0, line=24
+    objectId=0x80dcd988, line=24
+    objectId=0x80dcdab0, line=24
+    objectId=0x8040f598, line=25
+    objectId=0x804d2c70, line=25
+    objectId=0x8048f4b0, line=25
+    objectId=0x80dcd988, line=25
+    objectId=0x809e85d0, line=25
+    objectId=0x804805f0, line=25
+    objectId=0x8040f598, line=26
+    objectId=0x804d2c70, line=26
+    objectId=0x8048f4b0, line=26
+    objectId=0x80dcd988, line=26
+    objectId=0x8048ea58, line=27
+    objectId=0x804d2c70, line=27
+    objectId=0x8048f4b0, line=27
+    objectId=0x80dcd988, line=27
+    objectId=0x8040f598, line=27
+    objectId=0x804d2c70, line=28
+    objectId=0x80dcd988, line=28
+    objectId=0x804d2c70, line=28
+    objectId=0x80dcd948, line=28
+    objectId=0x8054ff20, line=28
+    objectId=0x8048ea58, line=28
+    objectId=0x804d2c70, line=29
+    objectId=0x804d2c70, line=29
+    objectId=0x8048ea58, line=30
+    objectId=0x8040f570, line=30
+    objectId=0x80dcd920, line=30
+    objectId=0x8048ea58, line=31
+    objectId=0x8048ea58, line=31
+    objectId=0x8040f548, line=31
+    objectId=0x8048ea58, line=32
+    objectId=0x8040f570, line=32
+    objectId=0x8048ea58, line=32
+    objectId=0x8048ea58, line=33
+    objectId=0x8040f5e0, line=34
+    objectId=0x8040f5e0, line=34
+    objectId=0x80dcd420, line=35
+    objectId=0x8043c510, line=36
+    objectId=0x80dcd420, line=36
+    objectId=0x804777e8, line=36
+    objectId=0x8043c510, line=37
+    objectId=0x80dcd420, line=37
+    objectId=0x804777e8, line=37
+    objectId=0x80dcd8d8, line=38
+    objectId=0x80dcd8d8, line=39
+    objectId=0x80480270, line=41
+    objectId=0x80dcd8d8, line=41
+    objectId=0x80dcd8f0, line=41
+    objectId=0x80dcd470, line=41
+    objectId=0x8043c510, line=42
+    objectId=0x80dcd420, line=42
+    objectId=0x804777e8, line=42
+    objectId=0x80dcd8d8, line=42
+    objectId=0x80dcd8f0, line=42
+    objectId=0x80dcd470, line=42
+    objectId=0x804cd020, line=43
+    objectId=0x804cd020, line=44
+    objectId=0x804cd730, line=44
+    objectId=0x804cd740, line=44
+    objectId=0x804cd020, line=45
+    objectId=0x804cd730, line=45
+    objectId=0x804cd020, line=46
+    objectId=0x804cd730, line=46
+    objectId=0x804cd020, line=47
+    objectId=0x804cd730, line=47
+    objectId=0x804cd020, line=48
+
+Thread 0x804cd750
+  at java.lang.Object.wait(J)V (Native Method)
+  at java.lang.Object.wait()V (Object.java:502)
+  at sun.awt.AWTAutoShutdown.run()V (AWTAutoShutdown.java:281)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x804cd7c0, line=1
+    objectId=0x804cd7c8, line=2
+    objectId=0x804cd750, line=2
+    objectId=0x804cd7c0, line=2
+    objectId=0x804cd750, line=3
+
+Thread 0x80477778
+  at sun.awt.X11.XToolkit.waitForEvents(J)V (Native Method)
+  at sun.awt.X11.XToolkit.run(Z)V (XToolkit.java:567)
+  at sun.awt.X11.XToolkit.run()V (XToolkit.java:542)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x804777e8, line=1
+    objectId=0x80477840, line=1
+    objectId=0x804777e8, line=2
+    objectId=0x80477778, line=3
+
+Thread 0x80477858
+  at java.lang.Object.wait(J)V (Native Method)
+  at java.lang.ref.ReferenceQueue.remove(J)Ljava/lang/ref/Reference; (ReferenceQueue.java:133)
+  at java.lang.ref.ReferenceQueue.remove()Ljava/lang/ref/Reference; (ReferenceQueue.java:149)
+  at sun.java2d.Disposer.run()V (Disposer.java:143)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x804778d0, line=1
+    objectId=0x804778c8, line=1
+    objectId=0x804778e8, line=3
+    objectId=0x80477858, line=4
+
+Thread 0x80477900
+  at java.net.PlainSocketImpl.socketAccept(Ljava/net/SocketImpl;)V (Native Method)
+  at java.net.AbstractPlainSocketImpl.accept(Ljava/net/SocketImpl;)V (AbstractPlainSocketImpl.java:375)
+  at java.net.ServerSocket.implAccept(Ljava/net/Socket;)V (ServerSocket.java:470)
+  at java.net.ServerSocket.accept()Ljava/net/Socket; (ServerSocket.java:438)
+  at sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept()Ljava/net/Socket; (LocalRMIServerSocketFactory.java:52)
+  at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop()V (TCPTransport.java:387)
+  at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run()V (TCPTransport.java:359)
+  at java.lang.Thread.run()V (Thread.java:679)
+
+  locals:
+    objectId=0x804778f0, line=0
+    objectId=0x80477970, line=1
+    objectId=0x80dce198, line=1
+    objectId=0x804778f0, line=1
+    objectId=0x80477a40, line=2
+    objectId=0x80dce178, line=2
+    objectId=0x80dce198, line=2
+    objectId=0x80477a40, line=3
+    objectId=0x80dce178, line=3
+    objectId=0x80477a40, line=4
+    objectId=0x80477a70, line=5
+    objectId=0x80477a70, line=6
+    objectId=0x80477900, line=7
+
+Thread 0x80477b70
+
+  locals:
+
+Thread 0x80477be0
+  at java.lang.Object.wait(J)V (Native Method)
+  at java.lang.ref.ReferenceQueue.remove(J)Ljava/lang/ref/Reference; (ReferenceQueue.java:133)
+  at java.lang.ref.ReferenceQueue.remove()Ljava/lang/ref/Reference; (ReferenceQueue.java:149)
+  at java.lang.ref.Finalizer$FinalizerThread.run()V (Finalizer.java:177)
+
+  locals:
+    objectId=0x80477c58, line=1
+    objectId=0x80477c50, line=1
+
+Thread 0x80477c70
+  at java.lang.Object.wait(J)V (Native Method)
+  at java.lang.Object.wait()V (Object.java:502)
+  at java.lang.ref.Reference$ReferenceHandler.run()V (Reference.java:133)
+
+  locals:
+    objectId=0x80477ce0, line=2
+
+Thread 0x80478468
+  at main.Processing.setLast(ID)V (Processing.java:123)
+  at main.Processing.<init>(Ljava/util/List;)V (Processing.java:509)
+  at main.Recording.<init>()V (Recording.java:60)
+  at main.Connection.<init>()V (Connection.java:98)
+  at main.Interface.<init>()V (Interface.java:171)
+  at main.Main.main([Ljava/lang/String;)V (Main.java:6)
+
+  locals:
+    objectId=0x80dd31f0, line=1
+    objectId=0x80dd3618, line=2
+    objectId=0x80dd3208, line=2
+    objectId=0x80550270, line=3
+    objectId=0x80586a80, line=3
+    objectId=0x80586a90, line=3
+    objectId=0x80586aa0, line=3
+    objectId=0x80477f00, line=4
+    objectId=0x804780c0, line=4
+    objectId=0x80478218, line=4
+    objectId=0x80478280, line=4
+    objectId=0x80477da0, line=4
+    objectId=0x804cd7e8, line=4
+    objectId=0x804cd948, line=4
+    objectId=0x804cd5b8, line=4
+    objectId=0x804cdaa0, line=4
+    objectId=0x804783d8, line=5
+
