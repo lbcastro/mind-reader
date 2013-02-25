@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,6 +85,12 @@ public class Saving {
 		rawList.add(rawList12);
 		rawList.add(rawList13);
 	}
+	
+	private void clearLists() {
+		for (int x = 0; x < 14; x++) {
+			rawList.get(x).clear();
+		}
+	}
 
 	public static void addRaw(double value, int channel) 
 	{
@@ -117,7 +124,9 @@ public class Saving {
 
 	public static File eventLocation(String name) 
 	{
-		String fileLoc = "/home/lourenco/workspace/Mind Reader/ptr/" + name.toString() + ".xml";
+		String fileLoc = "ptr/" + name.toString() + ".xml";
+		
+		
 		File file = new File(fileLoc);
 
 		return file;
@@ -551,7 +560,7 @@ public class Saving {
 
 			//
 			//}
-
+			clearLists();
 			getRawList().clear();
 
 			// Remove baseline.
