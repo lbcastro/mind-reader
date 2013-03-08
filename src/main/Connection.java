@@ -58,11 +58,15 @@ public class Connection {
 			
 			Edk.INSTANCE.EE_EmoEngineEventGetEmoState(emoEvent, emoState);
 			
-			/*
-			if(EmoState.INSTANCE.ES_ExpressivIsBlink(emoState) == 1) {
-				System.out.println("BLINK");
-			}
-			*/
+			
+//			if (EmoState.INSTANCE.ES_ExpressivIsRightWink(emoState) == 1) {
+//				System.out.println("EMOTIV - WINK RIGHT");
+//			}
+//			
+//			if (EmoState.INSTANCE.ES_ExpressivIsLeftWink(emoState) == 1) {
+//				System.out.println("EMOTIV - WINK LEFT");
+//			}
+			
 			
 			// If there is a new event.
 			if (state == EdkErrorCode.EDK_OK.ToInt()) {

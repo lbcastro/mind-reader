@@ -61,22 +61,16 @@ public class EegChart extends XYChart {
 	public static void addEeg(double value) 
 	{
 		
-		
-		/*
-		double time;
-		time = System.currentTimeMillis() - lastTime;
-		
-		time = Math.round(((time)/1000)*100.00)/100.00;
-		*/
-		
 		eegSeries.addOrUpdate(aa, value);
-		
 		aa += 1;
+		/*
+
 		if (aa >= 2589) {
 			aa = 0;
 			getPlot().clearAnnotations();
 			getPlot().clearDomainMarkers();
 		}
+		*/
 	}
 	//
 	
@@ -86,6 +80,7 @@ public class EegChart extends XYChart {
 
 		XYPlot p = getPlot();
 
+		
 		// Create an annotation with the new channel's name.
 		XYTextAnnotation ann = new XYTextAnnotation(Interface.getChannelName(channel), aa+0.8, -185.0);
 		ann.setPaint(Color.WHITE);
@@ -106,7 +101,7 @@ public class EegChart extends XYChart {
 	{
 		setDataSet(new XYSeriesCollection());
 		eegSeries = new XYSeries("EEG", false, false);
-		eegSeries.setMaximumItemCount(2590);
+		//eegSeries.setMaximumItemCount(1500);
 		getDataSet().addSeries(eegSeries);
 	}
 	
@@ -124,10 +119,10 @@ public class EegChart extends XYChart {
 		setPanelSize(860, 250);
 		setDomainLabel("Time (s)");
 		setRangeVisible(true);
-		setDomainRange(0,  2590, false);
-		setRangeRange(-508.0, 508.0, true);
+		setDomainRange(0,  1500, true);
+		setRangeRange(-508.0, 508.0, false);
 		setRangeCenter(0.0);
-		setTicks("domain", 5);
+		setTicks("domain", 1);
 	}
 	//
 }
